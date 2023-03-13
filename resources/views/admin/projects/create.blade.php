@@ -31,6 +31,17 @@
             <div class="w-75 pe-5">
                 <label class="mb-2" for="image">Immagine progetto</label>
                 <input type="file" class="form-control" name="image" id="image">
+
+                <div class="mt-4 px-1 d-flex justify-content-between align-items-center">
+                    @foreach ($technologies as $technology)
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{$technology->id}}" name="technologies[]" id="technology-id-{{$technology->id}}">
+                        <label class="form-check-label" for="technology-id-{{$technology->id}}">
+                          {{$technology->label}}
+                        </label>
+                      </div>
+                    @endforeach
+                </div>
             </div>
             <div class="w-25 px-5">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png" class="img-fluid rounded" alt="placeholder" id="preview">                
